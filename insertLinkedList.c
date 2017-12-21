@@ -15,16 +15,30 @@ void createNode ()
 }
 void printList ()
 {
-    struct Node *node = start;
-    while (node != NULL)
+    printf("\n      Head\n");
+    printf("-------------------\n");
+    printf("    %p\n",start);
+    printf("-------------------\n");
+    printf("       |\n       |\n");
+
+    struct Node *print = start;
+    while (print != NULL)
     {
-        printf("NewNode %p, Data %d | NextNode %p\n\n",node,node->data,node->next);
-        node = node->next;
+        printf("    %p\n",print);
+        printf("--------------------\n");
+        printf("   %d   | %p\n",print->data,print->next);
+        printf("--------------------\n");
+        printf("       |\n       |\n");
+        print = print->next;
     }
 }
 void createList ()
 {
-    int i, n = 5;
+    int i, n;
+
+    printf("Enter the number of item: ");
+    scanf("%d",&n);
+
     for(i=0; i<n; i++)
     {
         createNode();
@@ -46,7 +60,8 @@ void insertItem ()
     {
         if(newNode->data < search->data){
             newNode->next = search;
-            prevNode->next = newNode;
+            if(search == start) start = newNode;
+            else prevNode->next = newNode;
             break;
         }else{
             prevNode = search;
@@ -62,7 +77,10 @@ void main ()
 {
     createList();
     printList();
+
+    printf("\nEnter the item to insert: ");
     insertItem();
+
     printList();
 }
 
