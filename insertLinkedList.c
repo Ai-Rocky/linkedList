@@ -60,8 +60,10 @@ void insertItem ()
     {
         if(newNode->data < search->data){
             newNode->next = search;
-            if(search == start) start = newNode;
-            else prevNode->next = newNode;
+            if(search == start)
+                start = newNode;
+            else
+                prevNode->next = newNode;
             break;
         }else{
             prevNode = search;

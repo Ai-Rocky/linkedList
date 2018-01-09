@@ -36,7 +36,7 @@ void searchItem ()
 {
     int item, found = 0;
 
-    printf("Enter the item to search: ");
+    printf("\n\nEnter the item to search: ");
     scanf("%d",&item);
 
     struct Node *search = start;
@@ -49,26 +49,16 @@ void searchItem ()
         search = search->next;
     }
     if(found == 1)
-        printf("\nFound in %p\n",search);
+        printf("\nFound in %p location.\n",search);
     else
         printf("\nNot found\n");
 }
 void printList ()
 {
-    printf("\n      Head\n");
-    printf("-------------------\n");
-    printf("    %p\n",start);
-    printf("-------------------\n");
-    printf("       |\n       |\n");
-
     struct Node *print = start;
     while (print != NULL)
     {
-        printf("    %p\n",print);
-        printf("--------------------\n");
-        printf("   %d   | %p\n",print->data,print->next);
-        printf("--------------------\n");
-        printf("       |\n       |\n");
+        printf("%d ",print->data);
         print = print->next;
     }
 }

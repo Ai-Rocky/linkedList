@@ -5,8 +5,8 @@ struct Node
     int data;
     struct Node *prev;
     struct Node *next;
-};
-struct Node *start = NULL, *newNode, *preNode;
+
+} *start = NULL, *newNode, *preNode;
 
 void main ()
 {

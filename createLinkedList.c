@@ -4,8 +4,8 @@ struct Node
 {
     int data;
     struct Node *next;
-};
-struct Node *start = NULL, *newNode, *preNode;
+
+} *start = NULL, *newNode, *preNode;
 
 void main ()
 {
@@ -32,20 +32,10 @@ void main ()
 
     }
 
-    printf("\n      Head\n");
-    printf("-------------------\n");
-    printf("    %p\n",start);
-    printf("-------------------\n");
-    printf("       |\n       |\n");
-
     struct Node *print = start;
     while (print != NULL)
     {
-        printf("    %p\n",print);
-        printf("--------------------\n");
-        printf("   %d   | %p\n",print->data,print->next);
-        printf("--------------------\n");
-        printf("       |\n       |\n");
+        printf("%d ",print->data);
         print = print->next;
     }
 }
